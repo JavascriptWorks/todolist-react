@@ -39,8 +39,8 @@ class App extends Component {
           <h1 className="App-title">Just Keep Doing And All Of It Will Be Done.</h1>
           <div>
             <form onSubmit={this.addItem}>
-              <input type="text" placeholder="Add task" ref={(ele)=>this._newTaskInput=ele}/>
-              <button type="submit">Add task</button>
+              <input type="text" placeholder="Add task" ref={(ele)=>this._newTaskInput=ele} className="ToDoInput"/>
+              <button type="submit" className="ToDoSubmit">Add task</button>
             </form>
           </div>
         </header>
