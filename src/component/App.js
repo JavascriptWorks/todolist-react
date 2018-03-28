@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ToDoList from './ToDoList'
+import ToDoList from './ToDoList';
+// import TaskState from '../util/ToDoTaskStates';
 import logo from './../image/logo.svg';
 import '../css/App.css';
 
@@ -17,7 +18,13 @@ class App extends Component {
     event.preventDefault();
     let newTaskItem = this._newTaskInput.value.trim();
     if(newTaskItem !== "") {
-      this.state.items.push(newTaskItem);
+      let items = this.state.items;
+      items.push({
+        time: Date.now(),
+        task: newTaskItem,
+        status: "ToDo"
+      });
+      this.setState({items});
       console.log(this.state.items);
     }
     this._newTaskInput.value = "";
