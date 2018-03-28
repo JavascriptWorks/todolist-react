@@ -1,5 +1,5 @@
 # The project in 1 picture
-
+![Project Snapshot](todo-list-react.png)
 
 ## Tools and Libraries
 - This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
