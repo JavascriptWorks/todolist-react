@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ToDoList from './ToDoList';
-// import TaskState from '../util/ToDoTaskStates';
-import {TODO, DONE} from './../util/constants.js';
+import TaskState from './../util/TaskState';
+// import {TODO, DONE} from './../util/constants.js';
 import logo from './../image/logo.svg';
 import '../css/App.css';
 
@@ -25,7 +25,7 @@ class App extends Component {
       items.push({
         time: Date.now(),
         task: newTaskItem,
-        status: TODO
+        status: TaskState.TODO
       });
       this.setState({items});
       console.log(this.state.items);
@@ -46,8 +46,8 @@ class App extends Component {
 
   toggleState(state) {
     console.log(`state = ${state}`);
-    if(state === TODO) return DONE;
-    return TODO;
+    if(state === TaskState.TODO) return TaskState.DONE;
+    return TaskState.TODO;
   }
 
   render() {

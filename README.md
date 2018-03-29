@@ -15,4 +15,7 @@
 ## References
 - [Book - Learn React by Kirupa Chinnathambi](https://amzn.to/2ISaSvD)
 - [React Docs - Uncontrolled Components](https://reactjs.org/docs/uncontrolled-components.html)
-- [Regression: onChange doesn't fire with defaultChecked and radio inputs](https://github.com/facebook/react/issues/9988)
+- [Checkboxes in React.js](http://react.tips/checkboxes-in-react/)
+- [Github Issue Tracker - Regression: onChange doesn't fire with defaultChecked and radio inputs](https://github.com/facebook/react/issues/9988)
+- [Github Issue Tracker - Can't update 'checked' attribute](https://github.com/facebook/react/issues/6321)
+- [Reddit - Sharing Constants in ES6](https://www.reddit.com/r/javascript/comments/3bo42p/sharing_constants_in_es6_modules/)

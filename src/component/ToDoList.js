@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../css/ToDoList.css';
-import {DONE} from './../util/constants.js';
+// import {DONE} from './../util/constants.js';
+import TaskState from './../util/TaskState';
 
 class ToDoList extends Component {
     constructor(props, context) {
@@ -26,7 +27,7 @@ class ToDoList extends Component {
     }
 
     isChecked(status) {
-        return status===DONE ? true : false;
+        return status===TaskState.DONE ? true : false;
     }
 
     changeTaskItemStatus(eve, time) {
