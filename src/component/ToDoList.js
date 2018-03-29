@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../css/ToDoList.css';
 import TaskItem from './TaskItem';
+import FlipMove from 'react-flip-move';
 
 class ToDoList extends Component {
     constructor(props, context) {
@@ -22,7 +23,9 @@ class ToDoList extends Component {
         return(
             <div>
                 <ul className="ToDoList">
-                    {taskItems}
+                    <FlipMove enterAnimation="fade">
+                        {taskItems}
+                    </FlipMove>
                 </ul>
             </div>
         );

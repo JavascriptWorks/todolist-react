@@ -10,11 +10,13 @@
     [ ] Edit task
     [+] Why not call `thiss.props.toggleTaskItemStatus` directly (instead of `this.changeTaskItemStatus`) in the  `onChange` property of `TaskItem` component??? [Refactoring Exercise]
     [ ] Auto-sort list based on task status - Push completed items below incomplete ones. 
+    [+] Animations
 
 ## Tools and Libraries
 - This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 - [Yarn](https://yarnpkg.com/en/) instead of [npm](https://www.npmjs.com/)
 - [momentjs](http://momentjs.com/) for easy date formating
+- [react-flip-move](https://github.com/joshwcomeau/react-flip-move) for simple adding/removing todo item animations
 
 ## Common Tasks
 - `yarn start` to start server.
