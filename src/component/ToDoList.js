@@ -11,16 +11,14 @@ class ToDoList extends Component {
     }
 
     taskItem(item) {
-        console.log("In taskItem(..)");
-        console.log(item);
-        console.log(item.status===DONE);
         console.log(this.isChecked(item.status));
+        let checked = this.isChecked(item.status) ? 'checked' : '';
         return (
             <li key={item.time} className={item.status}>
                 <input 
                     type="checkbox" 
                     className={item.status}                    
-                    defaultChecked={()=>this.isChecked(item.status)}
+                    defaultChecked={checked}
                     onChange={(e) => this.changeTaskItemStatus(e, item.time)} />
                 {item.task}                
             </li>
