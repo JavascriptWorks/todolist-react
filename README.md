@@ -1,6 +1,16 @@
 # The project in 1 picture
 ![Project Snapshot](todo-list-react.png)
 
+## ToDos
+    [+] Add task
+    [+] Style task list
+    [+] Change task status to `Done`
+    [+] Change task status to `ToDo`
+    [ ] Delete task
+    [ ] Edit task
+    [+] Why not call `thiss.props.toggleTaskItemStatus` directly (instead of `this.changeTaskItemStatus`) in the  `onChange` property of `TaskItem` component??? [Refactoring Exercise]
+    [ ] Auto-sort list based on task status - Push completed items below incomplete ones. 
+
 ## Tools and Libraries
 - This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 - [Yarn](https://yarnpkg.com/en/) instead of [npm](https://www.npmjs.com/)

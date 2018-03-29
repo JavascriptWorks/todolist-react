@@ -39,7 +39,6 @@ class App extends Component {
       if(item.time===time) item.status = this.toggleState(item.status);
       return item;
     });
-    console.log(items);
     this.setState({items:this.state.items});
   }
 
