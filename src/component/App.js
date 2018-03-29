@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ToDoList from './ToDoList';
 import TaskState from './../util/TaskState';
-// import {TODO, DONE} from './../util/constants.js';
 import logo from './../image/logo.svg';
 import '../css/App.css';
 
