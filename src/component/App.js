@@ -71,6 +71,10 @@ class App extends Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    this._newTaskInput.focus();
+  }
 }
 
 export default App;

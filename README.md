@@ -11,3 +11,8 @@
 - `yarn build` to build for production dedployment
 - `yarn test` to run test suite
 - `yarn add libraryName` instead of `npm install libraryName --save` to install `libraryName` locally and configure your `package.json` accordinngly.
+
+## References
+- [Book - Learn React by Kirupa Chinnathambi](https://amzn.to/2ISaSvD)
+- [React Docs - Uncontrolled Components](https://reactjs.org/docs/uncontrolled-components.html)
+- [Regression: onChange doesn't fire with defaultChecked and radio inputs](https://github.com/facebook/react/issues/9988)
