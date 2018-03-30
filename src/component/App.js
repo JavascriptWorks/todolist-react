@@ -10,6 +10,7 @@ class App extends Component {
     this.addItem = this.addItem.bind(this);
     this.toggleTaskItemStatus = this.toggleTaskItemStatus.bind(this);
     this.toggleState = this.toggleState.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
   state = {
@@ -27,15 +28,18 @@ class App extends Component {
         status: TaskState.TODO
       });
       this.setState({items});
-      console.log(this.state.items);
     }
     this._newTaskInput.value = "";
     this._newTaskInput.focus();
   }
 
+  deleteItem(time) {
+    let filteredItems = this.state.items.filter((item)=>item.time!==time);
+    this.setState({items:filteredItems});
+  }
+
   toggleTaskItemStatus(time) {
-    console.log("In toggleTaskItemStatus()..");
-    var items = this.state.items.filter((item)=>{
+    this.state.items.filter((item)=>{
       if(item.time===time) item.status = this.toggleState(item.status);
       return item;
     });
@@ -43,7 +47,6 @@ class App extends Component {
   }
 
   toggleState(state) {
-    console.log(`state = ${state}`);
     if(state === TaskState.TODO) return TaskState.DONE;
     return TaskState.TODO;
   }
@@ -64,6 +67,7 @@ class App extends Component {
         <div className="App-intro">
           <ToDoList 
             items={this.state.items} 
+            deleteTask={this.deleteItem}
             toggleTaskItemStatus={this.toggleTaskItemStatus} />
         </div>
       </div>

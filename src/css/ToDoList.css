@@ -13,7 +13,7 @@ li.ToDo {
 }
 
 li.Done {
-    font-size: .9em;
+    font-size: 1.1em;
     text-decoration: line-through dotted ghostwhite;
     background-color: gray;
     margin: 5px;
