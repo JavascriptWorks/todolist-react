@@ -12,7 +12,8 @@ class ToDoList extends Component {
     taskItem(item) {
         return (
             <TaskItem 
-                item={item} 
+                item={item}
+                editTask={this.props.editTask} 
                 deleteTask={this.props.deleteTask}
                 toggleTaskItemStatus={this.props.toggleTaskItemStatus} />            
         );

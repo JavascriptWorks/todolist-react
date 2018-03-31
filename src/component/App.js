@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ToDoList from './ToDoList';
+import EditTaskModal from './EditTaskModal';
 import TaskState from './../util/TaskState';
 import logo from './../image/logo.svg';
 import '../css/App.css';
@@ -11,10 +12,15 @@ class App extends Component {
     this.toggleTaskItemStatus = this.toggleTaskItemStatus.bind(this);
     this.toggleState = this.toggleState.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
+    this.modifyTask = this.modifyTask.bind(this);
+    this.openModalModifyTask = this.openModalModifyTask.bind(this);
+    this.closeModalModifyTask = this.closeModalModifyTask.bind(this);
   }
 
   state = {
-    items: []
+    items: [],
+    editableTask: {},
+    showModalEditTask: false
   };
 
   addItem(event) {
@@ -36,6 +42,27 @@ class App extends Component {
   deleteItem(time) {
     let filteredItems = this.state.items.filter((item)=>item.time!==time);
     this.setState({items:filteredItems});
+  }
+
+  modifyTask(time,task) {
+    let itemsCopy = this.state.items.slice();
+    let index = this.state.items.findIndex((item)=>item.time===time);
+    if(index>=0) {
+      itemsCopy[index].task = task;
+      this.setState(itemsCopy);
+    }
+  }
+
+  openModalModifyTask(time, task) {
+    console.log(`In App coponent, time: ${time}, task is ${task}`);
+    this.setState({
+      editableTask: {time,task},      
+      showModalEditTask: true
+    });
+  }
+
+  closeModalModifyTask() {
+    this.setState({showModalEditTask: false});
   }
 
   toggleTaskItemStatus(time) {
@@ -63,12 +90,18 @@ class App extends Component {
               <button type="submit" className="ToDoSubmit">Add task</button>
             </form>
           </div>
-        </header>
+        </header>        
         <div className="App-intro">
           <ToDoList 
             items={this.state.items} 
+            editTask={this.openModalModifyTask}
             deleteTask={this.deleteItem}
             toggleTaskItemStatus={this.toggleTaskItemStatus} />
+            <EditTaskModal
+          save={this.modifyTask} 
+          editableTask={this.state.editableTask}
+          isOpen={this.state.showModalEditTask}
+          onRequestClose={this.closeModalModifyTask} />
         </div>
       </div>
     );

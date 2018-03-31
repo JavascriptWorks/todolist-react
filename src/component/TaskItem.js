@@ -41,7 +41,7 @@ class TaskItem extends Component {
                     />
                 {item.task}
                 <span style={buttonStyle}>
-                    <button onClick={this.editTask}><img src={EditImage} alt="Edit" style={imageStyle} /></button>                
+                    <button onClick={()=>this.props.editTask(item.time, item.task)}><img src={EditImage} alt="Edit" style={imageStyle} /></button>                
                     <button onClick={()=>this.props.deleteTask(item.time)}><img src={DeleteImage} alt="Delete" style={imageStyle} /></button>                
                 </span>
             </li>
