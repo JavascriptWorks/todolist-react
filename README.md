@@ -1,5 +1,10 @@
-# The project in 1 picture
-![Project Snapshot](todo-list-react.png)
+# The project in picture(s)
+
+- How the main screen looks with TODO list items
+![Project Snapshot](todo-list-react-1.png)
+
+- Screenshot of Edit-task modal
+![Project Snapshot](todo-list-react-2.png)
 
 ## ToDos
     [+] Add task
