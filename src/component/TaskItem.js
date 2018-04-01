@@ -31,7 +31,7 @@ class TaskItem extends Component {
             right: 10,
         };
         return (
-            <li key={item.time} className={item.status}>
+            <li className={item.status}>
                 <input 
                     type="checkbox"
                     value={item.time} 
