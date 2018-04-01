@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ToDoList from './ToDoList';
 import EditTaskModal from './EditTaskModal';
 import TaskState from './../util/TaskState';
-import logo from './../image/logo.svg';
+import logo from './../image/logo.png';
 import '../css/App.css';
 
 class App extends Component {
@@ -81,8 +81,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <header className="App-header">       
+          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Just Keep Doing And All Of It Will Be Done.</h1>
           <div>
             <form onSubmit={this.addItem}>
@@ -97,11 +97,11 @@ class App extends Component {
             editTask={this.openModalModifyTask}
             deleteTask={this.deleteItem}
             toggleTaskItemStatus={this.toggleTaskItemStatus} />
-            <EditTaskModal
-          save={this.modifyTask} 
-          editableTask={this.state.editableTask}
-          isOpen={this.state.showModalEditTask}
-          onRequestClose={this.closeModalModifyTask} />
+          <EditTaskModal
+            save={this.modifyTask} 
+            editableTask={this.state.editableTask}
+            isOpen={this.state.showModalEditTask}
+            onRequestClose={this.closeModalModifyTask} />
         </div>
       </div>
     );
