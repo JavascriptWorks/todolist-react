@@ -17,18 +17,18 @@ class EditTaskModal extends Component {
     }
 
     handleEditingTask(event) {
-        console.log(`In handleEditingTask(), new task value : ${event.target.value}`);
         this.setState({task: event.target.value});
     }
 
-    modifyTask() {
-        console.log(`Inside EditTaskModal component, TaskTime:${this.props.editableTask.time} has new value: ${this.state.task}`);
+    modifyTask(event) {
+        event.preventDefault();
         this.props.save(this.props.editableTask.time, this.state.task);
         this.props.onRequestClose();
     }
 
     resetTaskValue() {
         this.setState({task: this.props.editableTask.task});
+        this._inputEdit.focus();
     }
 
     render() {
@@ -41,11 +41,15 @@ class EditTaskModal extends Component {
               shouldCloseOnOverlayClick={true}
               shouldCloseOnEsc={true}
               shouldReturnFocusAfterClose={true}>
-                <input 
-                  value={this.state.task} 
-                  onLoad={this.handleInitTaskValue}
-                  onChange={this.handleEditingTask}/>
-                <button onClick={()=>this.modifyTask()}>Edit</button>
+                <form onSubmit={(e)=>this.modifyTask(e)}>
+                    <input 
+                        className="ToDoInput"
+                        value={this.state.task} 
+                        onLoad={this.handleInitTaskValue}
+                        onChange={this.handleEditingTask}
+                        ref={(el)=>this._inputEdit=el} />
+                    <button type="submit" className="ToDoSubmit"> Edit </button>
+                </form>
             </ReactModal>
         );
     }

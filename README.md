@@ -7,8 +7,8 @@
     [+] Change task status to `Done`
     [+] Change task status to `ToDo`
     [+] Delete task
-    [ ] Edit task
-    [+] Why not call `thiss.props.toggleTaskItemStatus` directly (instead of `this.changeTaskItemStatus`) in the  `onChange` property of `TaskItem` component??? [Refactoring Exercise]
+    [+] Edit task
+    [+] Why not call `this.props.toggleTaskItemStatus` directly (instead of `this.changeTaskItemStatus`) in the  `onChange` property of `TaskItem` component??? [Refactoring Exercise]
     [ ] Auto-sort list based on task status - Push completed items below incomplete ones. 
     [+] Animations
 
